@@ -12,6 +12,7 @@ jobs:
         with:
           command: monitor
   sonarcloud:
+    needs: snyk
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
