@@ -1,4 +1,4 @@
-name: OWASP Ottawa - Trend Micro
+name: OWASP Ottawa - Trend Micro 2023
 on: push
 jobs:
   snyk:
