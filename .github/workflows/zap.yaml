@@ -1,15 +1,20 @@
 on: [push]
 
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
 jobs:
   zap_scan:
     runs-on: ubuntu-latest
-    name: Scan the webapplication
+    name: OWASP ZAP
     steps:
       - name: ZAP Scan
-        uses: zaproxy/action-full-scan@v0.4.0
+        uses: zaproxy/action-full-scan@v0.7.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           docker_name: 'owasp/zap2docker-stable'
-          target: 'https://demo.owasp-juice.shop/'
+          target: 'https://juice-shop.herokuapp.com/'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
