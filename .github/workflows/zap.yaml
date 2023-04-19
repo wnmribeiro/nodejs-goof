@@ -11,7 +11,7 @@ jobs:
     name: OWASP ZAP
     steps:
       - name: ZAP Scan
-        uses: zaproxy/action-full-scan@v0.7.0
+        uses: zaproxy/action-full-scan@latest
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           docker_name: 'owasp/zap2docker-stable'
